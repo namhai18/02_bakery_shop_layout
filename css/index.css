@@ -1,0 +1,573 @@
+/* <!--GLOBAL CSS------------------------------------------------------- --> */
+/* Hỗ trợ html5 */
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+/* Xóa hết cho tất cả các loại thẻ */
+*{
+    margin : 0;
+    padding :0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html,body{
+    font-family: 'Montserrat', sans-serif;
+    /* 1 REM = 18px */
+    /* Không khai báo thì 1 rem = 16 px */
+    font-size : 18px;
+}
+/* <!--HEADER CSS------------------------------------------------------- --> */
+/* define css cho ul nằm trong header */
+header div nav ul{
+    /* xóa dấu chấm tròn ul li */
+    list-style: none;
+    padding: 10px 0px;
+}
+/* Cùng 1 hàng cho li */
+header div nav ul li{
+    display:inline;
+    /* Tạo khoảng cách các li vs nhau */
+    margin: 10px;
+    
+}
+header div nav ul li a {
+    font-size: 10px;
+    color:white;
+    /* bỏ underline */
+    text-decoration: none;
+}
+.header__content p {
+    /* font-size: 37px; */
+    /* cần set rem trên html,body trước khi dùng*/
+    /* Chỉ cần sửa 1 vi trí trên html,body thôi */
+    font-size : 2rem;
+    color : white;
+}
+.header__content {
+    /* Khai báo flex tại thẻ cha trực tiếp để các con lên 1 hàng */
+    display : -webkit-box;
+    display : -ms-flexbox;
+    display : flex;
+    /* Cần có flex để dùng dc */
+    /* Tạo khoảng cách chiều ngang giữa các thẻ con */
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* Canh giữa theo chiều dọc */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* Canh nội dung lớn ngay giữa màn hình */
+    /* Chiếm 70% width pages */
+    width : 70%;
+    /* canh trái phải auto */
+    margin: 0 auto;
+}
+header {
+    background-color : rgb(78, 42, 132);
+    /* Cho tăng chiều cao */
+    padding: 10px 0px;
+    /* --11-- */
+    position : fixed;
+    width: 100%;
+    z-index : 9999;
+}
+.header__content .active a {
+    color: #ff0e83;
+}
+/* <!--carousel css------------------------------------------------------- --> */
+/* MARGIN: khoảng cách thẻ hiện hành và thẻ bên cạnh , 
+PADDING: khoảng cách viền và nội dung chữ*/
+/* margin-top , margin-left , margin-right */
+/* margin : 20px , t,r,b,l */
+/* margin : 10px,20px  (t,b) (r,l) */
+.carousel{
+    background-image: url('../img/b3.jpg');
+    height: 500px;
+    /* Không tự repeat hình  */
+    background-repeat : no-repeat;
+    background-size: cover;
+    background-position: center; 
+    color: white;
+    text-align: center;
+    /* Dùng khi carousel có 1 thẻ con duy nhất */
+    /* Khai báo flex tại thẻ cha trực tiếp để các con lên 1 hàng */
+    display : -webkit-box;
+    display : -ms-flexbox;
+    display : flex;
+    /* Cần có flex để dùng dc */
+    /* Tạo khoảng cách chiều ngang giữa các thẻ con */
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* Canh giữa theo chiều dọc */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.carousel button{
+    background-color:  #ff0e83;
+    border : 1px solid  #ff0e83;
+    color : white;
+    padding : 5px 5px;
+    /* Tạo độ cong cho nút */
+    border-radius: 3px;
+    /* Hiện bàn tay khi rê vào button */
+    cursor: pointer;
+}
+/* <!--intro css------------------------------------------------------- --> */
+ /* Tương tự table,float,flex,grid  */
+ /* 
+ grid (>ie10): khi dùng layout phức tạp nhiều ô , hàng
+ flex (>ie9): header menu dùng, giao diện 1 hàng đơn giản.
+ float (version cũ):  
+ table : 
+  */
+.intro {
+    display : grid;
+    /* Chia 4 cột mỗi cột 25% */
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: repeat(4,25%); */
+    grid-template-columns: repeat(4,1fr);
+}
+/* Gom cột item nào thì cần gọi class riêng items đó */
+.intro__ab1{
+    /* Add column bat đầu và column ket thúc */
+    /* grid-column: 2 / 4 ; */
+    grid-column : 2 / span 2;
+}
+.intro__ab1 img {
+    width: 100%;
+}
+.intro__bestforyou{
+    grid-column : 1 / span 2;
+}
+.intro__ab4{
+    grid-column : 3 / span 2;
+}
+.intro__items img {
+    display: block;
+}
+/* <!--numbers css------------------------------------------------------- --> */
+.numbers__contents {
+    display : -webkit-box;
+    display : -ms-flexbox;
+    display : flex;
+    /* Tạo khoảng cách chiều ngang giữa các thẻ con */
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* Canh giữa theo chiều dọc */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    padding :  30px 40px;
+    /* Canh nội dung lớn ngay giữa màn hình */
+    /* Chiếm 70% width pages */
+    width : 70%;
+    /* canh trái phải auto */
+    margin: 0 auto;
+}
+.numbers__contents__item h3{
+    color : blue;
+}
+.numbers__contents__item p{
+    font-size : 20px;
+    font : bold;
+}
+/* <!--services css------------------------------------------------------- --> */
+.services h3 {
+    text-align: center;
+}
+.services__content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* Tạo khoảng cách chiều ngang giữa các thẻ con */
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    /* Canh giữa theo chiều dọc */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+}
+.services__content .services__items button {
+        background-color:  #ff0e83;
+        border : 1px solid  #ff0e83;
+        color : white;
+        padding : 10px 5px;
+        /* Tạo độ cong cho nút */
+        border-radius: 3px;
+        /* Hiện bàn tay khi rê vào button */
+        cursor: pointer;
+}
+/* Chỉnh border lại cho icon, có thể chỉnh màu và size như là text */
+.services__items i {
+    color : purple;
+    font-size : 3rem;
+    width : 70px;
+    height: 70px;
+    /* Canh giữa icon trong border -> áp dụng cho 1 dòng text */
+    line-height: 70px;
+    border : 1px solid purple;
+    background-color: white;
+    border-radius: 50%;
+    /* Animation: Thấy được sự thay đổi màu */
+    -webkit-transition-property:all;
+    transition-property:all;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+    /* transition-delay : 2s; */
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+}
+/* Rê chuột thì icon đổi màu */
+.services__items:hover i{
+    color: rgb(218, 136, 211);
+}
+/* <!--Gallery css------------------------------------------------------- --> */
+.gallery__contents {
+    display : grid;
+    /* Chia 4 cột mỗi cột 25% */
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: repeat(4,25%); */
+    grid-template-columns: repeat(4,1fr);
+    /* Mở rộng các viền hình */
+    grid-gap: 20px;
+    padding : 0 10px;
+}
+.gallery__g1{
+    grid-column: 1/ span 2;
+}
+.gallery__g6 {
+    grid-column: 3/ span 2;
+}
+.gallery__items img {
+    width : 100%;
+    height: 100%;
+    display: block;
+}
+/* Các khối chữ con phải di chuyển theo khối hình cha */
+.gallery__text {
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color:white;
+    text-align: left;
+    padding: 50px;
+}
+.gallery__items {
+    position: relative;
+}
+.gallery__text p {
+    position: absolute;
+    bottom : 50px;
+    right : 50px;
+}
+/* Thêm thuộc tính css before after nhằm tạo hiệu ứng đường gạch ngang*/
+/* .gallery__text h3::before{
+    content: 'The';
+}
+.gallery__text h3::after{
+    content: '!';
+} */
+
+/* trạng thái ban đầu vẽ đường kẻ ngang màu trắng nhưng ko cho hiển thị*/
+.gallery__text h3::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    /* Cần set display block để vẽ được  */
+    display: block;
+    margin-top: 30px;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform : translateY(50px);
+            transform : translateY(50px);
+}
+/* Khi re chuột vào thì hiển thị gạch ngang  */
+.gallery__text:hover h3::after {
+    -webkit-transform : translateY(0px);
+            transform : translateY(0px);
+    opacity: 1;
+}
+.gallery__text h3 {
+    -webkit-transform : translateY(30px);
+            transform : translateY(30px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.gallery__text:hover h3 {
+    -webkit-transform : translateY(0px);
+            transform : translateY(0px);
+}
+/* trả thẻ p về trạng thái ban đầu là ko hiển thị opacity = 0 */
+.gallery__text p {
+    -webkit-transform : translateY(60px);
+            transform : translateY(60px);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0;
+}
+/* khi hover chuột lên chữ thì trượt lên và hiển thị chữ */
+.gallery__text:hover p {
+    -webkit-transform : translateY(0px);
+            transform : translateY(0px);
+    opacity: 1;
+    color : white;
+}
+/* <!--Bake team css------------------------------------------------------- --> */
+.team {
+    background-color: purple;
+}
+.team h2 {
+    /* width: 70%; */
+    margin : 0px auto;
+    text-align: center;
+    color : white;
+    padding : 20px 0px;
+}
+.bake__contents {
+    display : grid;
+    /* Chia 4 cột mỗi cột 25% */
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: repeat(4,25%); */
+    grid-template-columns: repeat(3,1fr);
+    /* Mở rộng các viền hình */
+    grid-gap: 20px;
+    padding : 0 10px;
+    width: 50%;
+    margin : 0 auto;
+}
+.bake__contents .bake__team img {
+    width: 100%;
+    /* Edit thuộc tính inline -> block để vị trí hình = text */
+    display : block;
+}
+/* Hiển thị màu hồng khi rê chuột */
+.team__title {
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    background-color: pink;
+    color : white;
+    width: 100%;
+    padding : 10px 10px;
+    /* Canh chỉnh khi hover chuột */
+    opacity: 1;
+    /* Tốc độ hiệu ứng */
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+}
+.bake__team {
+    position: relative;
+}
+
+.team__detail{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding : 10px 10px;
+    /* Canh chỉnh khi hover chuột */
+    opacity: 0;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+}
+.bake__team:hover .team__title{
+    opacity: 0;
+}
+.bake__team:hover .team__detail{
+    opacity: 1;
+}
+/* team__item2 */
+/* rê chuột vào thì trượt hình màu đen lên  */
+.team__item2 .team__detail{
+    /* opacity: 1; */
+    -webkit-transform : translateX(-100%);
+            transform : translateX(-100%);
+}
+/* ra khỏi vùng thẻ cha thì ẩn đi */
+.bake__team {
+    overflow: hidden;
+}
+.team__item2:hover .team__detail{
+    -webkit-transform : translateX(0);
+            transform : translateX(0);
+}
+/* team__item3 hiệu ứng quay hình*/
+.team__item3 .team__detail{
+    /* opacity: 1; */
+    /* Quay 90 độ */
+    -webkit-transform : rotate(0deg);
+            transform : rotate(0deg);
+}
+.team__item3:hover .team__detail{
+    -webkit-transform : rotate(-360deg);
+            transform : rotate(-360deg);
+    opacity: 1;
+}
+/* team__item4 hiệu ứng zoom in out*/
+.team__item4 .team__detail{
+    /* opacity: 1; */
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+.team__item4:hover .team__detail{
+    -webkit-transform: scale(1) rotate(360deg);
+            transform: scale(1) rotate(360deg);
+    opacity: 1;
+}
+/* <!--Feedback team css------------------------------------------------------- --> */
+.feedbacks h2 {
+    text-align: center;
+}
+.feedback__contents{
+  width: 70%;
+  margin : 0 auto;
+  text-align: center;
+}
+/* --12-- */
+@-webkit-keyframes UpDown {
+    /* 100s */
+    0%{};
+    25% {
+        -webkit-transform: translateY(-50px);
+                transform: translateY(-50px);
+    }
+    50%{
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    75%{
+        -webkit-transform: translateY(50px);
+                transform: translateY(50px);
+    }
+    100%{
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+}
+@keyframes UpDown {
+    /* 100s */
+    0%{};
+    25% {
+        -webkit-transform: translateY(-50px);
+                transform: translateY(-50px);
+    }
+    50%{
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    75%{
+        -webkit-transform: translateY(50px);
+                transform: translateY(50px);
+    }
+    100%{
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+}
+.carousel button{
+    /* UpDown tên keyframes ở trên */
+    -webkit-animation: UpDown 2s linear 0s infinite;
+            animation: UpDown 2s linear 0s infinite;
+    /* Cac hieu ung co the lam */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+/* <!--Contact css------------------------------------------------------- --> */
+/* --13-- */
+.contact__title{
+    text-align: center;
+}
+.form1 {
+    padding: 50px 0px;
+    display : grid;
+    /* Chia 4 cột mỗi cột 25% */
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: repeat(4,25%); */
+    grid-template-columns: repeat(2,1fr);
+    width: 70%;
+    margin: 10px auto;
+    grid-gap: 20px;
+}
+.form1 textarea{
+    grid-column: 1/ span 2;
+    padding : 10px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.form1 input {
+    padding : 10px 10px;
+    border: 1px solid black;
+    /* --14-- */
+    outline : none;
+    border-radius: 3px;
+}
+.form1 input:focus{
+    -webkit-box-shadow:0 0 0 0.2rem rgba(0,123,255,.25) ;
+            box-shadow:0 0 0 0.2rem rgba(0,123,255,.25) ;
+}
+.form1 button{
+    grid-column: 1/ span 2;
+    height: 50px;
+    background-color: pink;
+    color : white;
+    padding : 10px 10px;
+}
+/* Gọi ::placeholder của textarea ra đê chỉnh màu */
+.form1 textarea::-webkit-input-placeholder{
+    color:black;
+}
+.form1 textarea:-ms-input-placeholder{
+    color:black;
+}
+.form1 textarea::-ms-input-placeholder{
+    color:black;
+}
+.form1 textarea::placeholder{
+    color:black;
+}
+/* --15-- */
+.map {
+    width: 100%;
+}
+.youtube{
+    -ms-flex-line-pack: center;
+        align-content: center;
+    /* width: 100%; */
+}
+/* Chỉnh thẻ class cha để canh giữa vì là thẻ inline*/
+.contact__map {
+    text-align: center;
+}
+/* <!--Back to top css------------------------------------------------------- --> */
+/* --16-- */
+.backtotop {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid blue;
+    border-radius: 50%;
+    text-align: center;
+    /* Điều chỉnh mũi tên trong border tròn */
+    line-height: 50px;
+    color : blue;
+    visibility: hidden;
+}
+.cd-top--is-visible { 
+    visibility: visible;
+    /* opacity: 1; */
+}
